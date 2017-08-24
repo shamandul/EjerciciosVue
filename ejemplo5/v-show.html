@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista en Vue</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+	<div id="main">
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h3>suscribite a nuestro boletín</h3>
+				</div>
+				<div class="col-sm-5">
+					<input type="text" v-model="email" class="form-control">
+				</div>
+				<div class="col-sm-1">
+					<input type="submit" v-show="email" class="btn btn-primary">
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"></script>
+	<script type="text/javascript">
+	
+		new Vue({
+
+			el: '#main', 
+			created: function(){
+				this.getUsers();
+			},
+			data: {
+				email: ''
+			}
+		});
+	</script>
+
+</body>
+</html>
