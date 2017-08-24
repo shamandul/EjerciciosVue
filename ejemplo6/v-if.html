@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista en Vue</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+	<div id="main">
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1>v-if v-else y template</h1>
+				</div>
+				<div class="col-sm-5">
+					<template v-if="!message">
+						<h3>Escribe tu sugerencia</h3>
+						<p>El equipo de desarrollo puedetardar en contestara 24 horas</p>
+						<p><em>También puedes comunicarte por Twitter</em></p>
+					</template>
+					<!--<h3 v-if="!message">Escribe tu sugerencia</h3>-->
+					<<!--<h3 v-if="message">Presiona ENTER para continuar</h3> -->
+					<h3 v-else>Presiona ENTER para continuar</h3>
+					<textarea v-model="message" class="form-control">
+						
+					</textarea>
+				</div>
+				<div class="col-sm-7">
+					<h3>JSON</h3>
+					<pre>
+						{{ $data }}
+					</pre>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"></script>
+	<script type="text/javascript">
+	
+		new Vue({
+
+			el: '#main', 
+			data: {
+				message: ''
+			}
+		});
+	</script>
+
+</body>
+</html>
